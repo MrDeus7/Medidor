@@ -1,0 +1,13 @@
+.bar {
+    height: 50px;
+    background: #232d42;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  h1 {
+    color: white;
+  }
+  
