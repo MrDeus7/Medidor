@@ -17,12 +17,11 @@
 .datos{
     display: flex;
     flex-direction: row;
-    width: 90%;
+    width: 95%;
     height: 100px;
     align-items: center;
     justify-content: space-between;
-    padding-bottom:50px;
-    
+    padding-bottom:70px;
 }
 
 #individual{
@@ -30,9 +29,9 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 90%;
+    width: 95%;
     height: 500px;
-    
+    padding-top: 20px;
 }
 
 #Energia-Box{
