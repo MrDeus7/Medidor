@@ -11,8 +11,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { Ind1Component } from './ind1/ind1.component';
 import { Ind2Component } from './ind2/ind2.component';
 import { Ind3Component } from './ind3/ind3.component';
+import { SocketIoModule } from 'ngx-socket-io'; 
+import { SocketIoConfig } from 'ngx-socket-io';
 
-
+const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { Ind3Component } from './ind3/ind3.component';
         path:'',component:HomeComponent,
       }
     ]),
-    MatIconModule
+    MatIconModule,
+    SocketIoModule.forRoot(config)
   ],
   providers: [],
   bootstrap: [AppComponent]
