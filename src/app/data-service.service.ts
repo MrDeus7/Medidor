@@ -10,7 +10,7 @@ export class DataServiceService {
 
   constructor(private socket: Socket) { }
 
-  public getPrices$(): Observable<any>{
+  public getValues$(): Observable<any>{
     return new Observable(observer => {
       try{
         this.socket.on('connect', () => {

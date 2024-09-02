@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { Socket } from 'ngx-socket-io';
 import { DataServiceService } from '../data-service.service';
 
 @Component({
@@ -26,37 +25,21 @@ export class HomeComponent {
   
 
   btcPrices: number[] = [];
-  ethPrices: number[] = [];
   
   ngOnInit(): void{
-    this.dataService.getPrices$().subscribe({
+    this.dataService.getValues$().subscribe({
       next: (data) => {
         console.log('Data received:', data);
         
-        if (data && data.data) {
-          const btcData = data.data.find((item: any) => item.name === 'BTC');
-          const ethData = data.data.find((item: any) => item.name === 'ETH');
+        if (data) {
 
-          if (btcData && btcData.prices) {
-            this.btcPrices = btcData.prices[btcData.prices.length-1][0];
-            
-            
-            this.value = btcData.prices[btcData.prices.length-1][0].toString().charAt(9)+btcData.prices[btcData.prices.length-1][0].toString().charAt(10);
+            this.value = data.corriente;
+          
           } else {
-            console.warn('BTC data or prices not found');
-          }
 
-          if (ethData && ethData.prices) {
-            this.ethPrices = ethData.prices[btcData.prices.length-1][0];
-          } else {
-            console.warn('ETH data or prices not found');
-          }
+            console.warn('Data not found');
 
-          console.log('BTC Prices:', this.btcPrices);
-          console.log('ETH Prices:', this.ethPrices);
-        } else {
-          console.warn('Data format is incorrect');
-        }
+          }
       },
       error: (error) => {
         console.error('Error:', error);
