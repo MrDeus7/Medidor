@@ -10,7 +10,10 @@ import { DataServiceService } from '../data-service.service';
 
 
 export class HomeComponent {
-  @Input() value: number = 20; // Valor dinámico que se pasará al componente
+  @Input() meterName: string = "";
+  @Input() energy: number = 20; // Valor dinámico que se pasará al componente
+  @Input() cost: number = 0;
+  @Input() coEmissions: number = 0;
 
   constructor(private dataService: DataServiceService){
 
@@ -18,7 +21,7 @@ export class HomeComponent {
 
   getStrokeDasharray(): string {
     const circumference = 282.78; 
-    const visibleLength = (this.value / 100) * circumference; 
+    const visibleLength = (this.energy / 100) * circumference; 
     return `${visibleLength} ${circumference}`;
   }
 
@@ -32,9 +35,12 @@ export class HomeComponent {
         console.log('Data received:', data);
         
         if (data) {
-
-            this.value = data.corriente;
           
+          this.meterName = data.meterName;
+          this.energy = data.energy;
+          this.cost = data.cost;
+          this.coEmissions = data.coEmissions;
+
           } else {
 
             console.warn('Data not found');

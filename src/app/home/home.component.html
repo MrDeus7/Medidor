@@ -1,5 +1,6 @@
 <div class="general">
   <h1 class="meterName">MEDIDOR DE CONSUMO GENERAL</h1>
+  <h2 id="meter">{{ meterName }}</h2>
   <div class="medidor">
     <div id="gauge">
       <div id="major-ticks">
@@ -54,7 +55,7 @@
       </svg>
       <div id="center-circle">
         <span id="name">KWH</span>
-        <span id="value">{{ value }}</span>
+        <span id="value">{{ energy }}</span>
         <img src="" alt="" />
       </div>
     </div>
@@ -65,7 +66,7 @@
       <div class="titulo">Energia</div>
       <div id="icono">
         <mat-icon class="icon">power</mat-icon>
-        <span id="value-power">{{ value }} kWh</span>
+        <span id="value-power">{{ energy }} KWH</span>
       </div>
     </div>
 
@@ -73,7 +74,7 @@
       <div class="titulo">Coste</div>
       <div id="icono">
         <mat-icon class="icon">payments</mat-icon>
-        <span id="value-power">$0.0</span>
+        <span id="value-power">{{ cost }}$</span>
       </div>
     </div>
 
@@ -81,7 +82,7 @@
       <div class="titulo">Co2</div>
       <div id="icono">
         <mat-icon class="icon">factory</mat-icon>
-        <span id="value-power">00,00 lb</span>
+        <span id="value-power">{{coEmissions}} lb</span>
       </div>
     </div>
   </div>
