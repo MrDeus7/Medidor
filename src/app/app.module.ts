@@ -14,13 +14,14 @@ import { Ind2Component } from './ind2/ind2.component';
 import { Ind3Component } from './ind3/ind3.component';
 import { SocketIoModule } from 'ngx-socket-io'; 
 import { SocketIoConfig } from 'ngx-socket-io';
+import { GraficosComponent } from './graficos/graficos.component';
+
 
 const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 
 @NgModule({
   declarations: [
-    AppComponent,MenuComponent,HomeComponent, Ind1Component, Ind2Component, Ind3Component
-  ],
+    AppComponent,MenuComponent,HomeComponent, Ind1Component, Ind2Component, Ind3Component,GraficosComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,RouterModule.forRoot([

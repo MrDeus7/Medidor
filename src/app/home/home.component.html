@@ -53,11 +53,10 @@
           [attr.stroke-dasharray]="getStrokeDasharray()"
         />
       </svg>
-      <div id="center-circle">
+      <button style="border-color: green; cursor: pointer;" id="center-circle">
         <span id="name">KWH</span>
         <span id="value">{{ energy }}</span>
-        <img src="" alt="" />
-      </div>
+      </button>
     </div>
   </div>
 
@@ -87,7 +86,6 @@
     </div>
   </div>
 
-  
 
   <h1>Medidores Individuales</h1>
   <div id="individual">
@@ -101,4 +99,9 @@
       <app-ind3></app-ind3>
     </div>
   </div>
+
+  <div class="graficos">
+    <app-graficos></app-graficos>
+  </div>
+  
 </div>
