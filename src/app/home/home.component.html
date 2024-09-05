@@ -69,9 +69,20 @@
       </svg>
       <div  id="center-circle">
         <span id="name">KWH</span>
-        <span id="value">{{ energy }}</span>
-      </div>
-     
+       
+
+      <button *ngIf="adver"
+        class="boton"
+        mat-raised-button
+        matTooltipClass="tooltip"
+        matTooltip="Considere las siguientes acciones para disminuir el consumo:
+        1.Desconectar aparatos electronicos que no esten en uso.      
+        2.Revisar los dispositivos conectados en busca de mal funcionamiento.
+        3.Considerar aumentar la potencia de los paneles solares."
+        matTooltipPosition="right"
+      >
+        <img style="height: 40px; width: 40px" src="assets/warning.png" />
+      </button>
     </div>
   </div>
 
@@ -82,7 +93,7 @@
       <div class="titulo">Energia</div>
       <div id="icono">
         <mat-icon class="icon">power</mat-icon>
-        <span id="value-power">{{ energy }} KWH</span>
+        <span id="value-power">{{ energyConsumed }} KWH</span>
       </div>
     </div>
 
@@ -98,7 +109,7 @@
       <div class="titulo">Co2</div>
       <div id="icono">
         <mat-icon class="icon">factory</mat-icon>
-        <span id="value-power">{{ coEmissions }} Kg</span>
+        <span id="value-power">{{ coEmissionsGenerated }} Kg</span>
       </div>
     </div>
   </div>
