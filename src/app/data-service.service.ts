@@ -226,4 +226,127 @@ export class DataServiceService {
       }
     })
   }
+
+
+
+
+  public getDailyDataPanel$(): Observable<any>{
+    return new Observable(observer => {
+      try{
+        this.socket.on('connect', () => {
+          console.log('Im connected');
+        })
+
+        this.socket.on('pushDailyDataPanel', (data:any[]) => {
+          console.log('The data is heree ');
+          observer.next(data)
+        })
+
+        this.socket.on('disconnect', () => {
+          observer.complete()
+        })
+
+        this.socket.on('error', (e:any) =>{
+          observer.error(e)
+        })
+
+        this.socket.on('connect_error', (e:any) => {
+          observer.error(e)
+        })
+
+      }catch(e){
+        observer.error(e);
+      }
+    })
+  }
+
+  public getWeeklyDataPanel$(): Observable<any>{
+    return new Observable(observer => {
+      try{
+        this.socket.on('connect', () => {
+          console.log('Im connected');
+        })
+
+        this.socket.on('pushWeeklyData', (data:any[]) => {
+          console.log('The data is heree ');
+          observer.next(data)
+        })
+
+        this.socket.on('disconnect', () => {
+          observer.complete()
+        })
+
+        this.socket.on('error', (e:any) =>{
+          observer.error(e)
+        })
+
+        this.socket.on('connect_error', (e:any) => {
+          observer.error(e)
+        })
+
+      }catch(e){
+        observer.error(e);
+      }
+    })
+  }
+
+  public getMonthlyDataPanel$(): Observable<any>{
+    return new Observable(observer => {
+      try{
+        this.socket.on('connect', () => {
+          console.log('Im connected');
+        })
+
+        this.socket.on('pushMonthlyData', (data:any[]) => {
+          console.log('The data is heree ');
+          observer.next(data)
+        })
+
+        this.socket.on('disconnect', () => {
+          observer.complete()
+        })
+
+        this.socket.on('error', (e:any) =>{
+          observer.error(e)
+        })
+
+        this.socket.on('connect_error', (e:any) => {
+          observer.error(e)
+        })
+
+      }catch(e){
+        observer.error(e);
+      }
+    })
+  }
+
+  public getAnnualDataPanel$(): Observable<any>{
+    return new Observable(observer => {
+      try{
+        this.socket.on('connect', () => {
+          console.log('Im connected');
+        })
+
+        this.socket.on('pushAnnualData', (data:any[]) => {
+          console.log('The data is heree ');
+          observer.next(data)
+        })
+
+        this.socket.on('disconnect', () => {
+          observer.complete()
+        })
+
+        this.socket.on('error', (e:any) =>{
+          observer.error(e)
+        })
+
+        this.socket.on('connect_error', (e:any) => {
+          observer.error(e)
+        })
+
+      }catch(e){
+        observer.error(e);
+      }
+    })
+  }
 }
