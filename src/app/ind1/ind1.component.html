@@ -50,7 +50,7 @@
         [attr.stroke-dasharray]="getStrokeDasharray()"
       />
     </svg>
-    <button style="border-color: #e4e4e4; cursor: pointer;" id="center-circle">
+    <button (click)="insertData()" style="border-color: #e4e4e4; cursor: pointer;" id="center-circle">
       <span id="name">KWH</span>
       <span id="value">{{ energyConsumed }}</span>
       <img src="" alt="" />

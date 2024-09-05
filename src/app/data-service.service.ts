@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Socket } from 'ngx-socket-io';
 import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +10,13 @@ import { Observable } from 'rxjs';
 
 export class DataServiceService {
 
-  constructor(private socket: Socket) { }
+  private apiUrl = 'http://localhost:3000/insert';
+
+  constructor(private socket: Socket, private http: HttpClient) { }
+
+  public insertData(data:any):Observable<any>{
+    return this.http.post(this.apiUrl, data);
+  }
 
   public getGeneralValues$(): Observable<any>{
     return new Observable(observer => {

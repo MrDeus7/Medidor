@@ -53,16 +53,16 @@
             [attr.stroke-dasharray]="getStrokeDasharray()"
           />
         </svg>
-        <button style="border-color: #e4e4e4; cursor: pointer; " id="center-circle">
+        <div id="center-circle">
           <span id="name">KWH</span>
           <span id="value">{{ energyGenerated }}</span>
-        </button>
+        </div>
       </div>
     </div>
   
     <div class="datos">
       <div id="Energia-Box">
-        <div class="titulo">Energia</div>
+        <div class="titulo">Energía</div>
         <div id="icono">
           <mat-icon class="icon">power</mat-icon>
           <span id="value-power">{{ energyGenerated }} KWH</span>
@@ -73,15 +73,15 @@
         <div class="titulo">Ahorro</div>
         <div id="icono">
           <mat-icon class="icon">payments</mat-icon>
-          <span id="value-power">{{ saving }}$</span>
+          <span id="value-power">{{ saving }} $</span>
         </div>
       </div>
   
       <div id="Co2-box">
-        <div class="titulo">Reduccion de Co2</div>
+        <div class="titulo">Reducción de CO2</div>
         <div id="icono">
           <mat-icon class="icon">factory</mat-icon>
-          <span id="value-power">{{reducedCoEmissions}} lb</span>
+          <span id="value-power">{{reducedCoEmissions}} Kg</span>
         </div>
       </div>
     </div>

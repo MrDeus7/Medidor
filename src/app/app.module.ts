@@ -1,7 +1,7 @@
 //UPDATE 11:47 1/09/2024
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
@@ -29,6 +29,7 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
     AppComponent,MenuComponent,HomeComponent, Ind1Component, Ind2Component, Ind3Component,GraficosComponent, PanelComponent],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,RouterModule.forRoot([
       {
         path:'',component:InfoComponent

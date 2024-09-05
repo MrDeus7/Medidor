@@ -22,7 +22,7 @@ export class HomeComponent {
 
   getStrokeDasharray(): string {
     const circumference = 282.78;
-    const visibleLength = (this.energyConsumed / 100) * circumference;
+    const visibleLength = (this.energyConsumed / 20) * circumference;
     return `${visibleLength} ${circumference}`;
   }
 

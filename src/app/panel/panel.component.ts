@@ -10,7 +10,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class PanelComponent {
   @Input() meterName: string = '';
-  @Input() energyGenerated: number = 20; // Valor dinámico que se pasará al componente
+  @Input() energyGenerated: number = 0; // Valor dinámico que se pasará al componente
   @Input() saving: number = 0;
   @Input() reducedCoEmissions: number = 0;
 
@@ -26,7 +26,7 @@ export class PanelComponent {
 
   getStrokeDasharray(): string {
     const circumference = 282.78;
-    const visibleLength = (this.energyGenerated / 100) * circumference;
+    const visibleLength = (this.energyGenerated / 20) * circumference;
     return `${visibleLength} ${circumference}`;
   }
 

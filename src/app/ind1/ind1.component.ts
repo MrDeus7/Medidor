@@ -68,4 +68,19 @@ export class Ind1Component {
       },
     });
   }
+
+  insertData(){
+    const data = {
+      meterName: this.meterName
+    };
+
+    this.dataService.insertData(data).subscribe(
+      response => {
+        console.log('Datos insertados');
+      },
+      error => {
+        console.error('Error al insertar los datos');
+      }
+    );
+  }
 }
