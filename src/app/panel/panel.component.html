@@ -55,7 +55,7 @@
         </svg>
         <button style="border-color: #e4e4e4; cursor: pointer; " id="center-circle">
           <span id="name">KWH</span>
-          <span id="value">{{ energy }}</span>
+          <span id="value">{{ energyGenerated }}</span>
         </button>
       </div>
     </div>
@@ -65,7 +65,7 @@
         <div class="titulo">Energia</div>
         <div id="icono">
           <mat-icon class="icon">power</mat-icon>
-          <span id="value-power">{{ energy }} KWH</span>
+          <span id="value-power">{{ energyGenerated }} KWH</span>
         </div>
       </div>
   
@@ -73,7 +73,7 @@
         <div class="titulo">Ahorro</div>
         <div id="icono">
           <mat-icon class="icon">payments</mat-icon>
-          <span id="value-power">{{ cost }}$</span>
+          <span id="value-power">{{ saving }}$</span>
         </div>
       </div>
   
@@ -81,7 +81,7 @@
         <div class="titulo">Reduccion de Co2</div>
         <div id="icono">
           <mat-icon class="icon">factory</mat-icon>
-          <span id="value-power">{{coEmissions}} lb</span>
+          <span id="value-power">{{reducedCoEmissions}} lb</span>
         </div>
       </div>
     </div>

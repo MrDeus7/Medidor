@@ -197,4 +197,33 @@ export class DataServiceService {
   }
 
 
+  public getPanelData$(): Observable<any>{
+    return new Observable(observer => {
+      try{
+        this.socket.on('connect', () => {
+          console.log('Im connected');
+        })
+
+        this.socket.on('pushPanelData', (data:any[]) => {
+          console.log('The data is heree ');
+          observer.next(data)
+        })
+
+        this.socket.on('disconnect', () => {
+          observer.complete()
+        })
+
+        this.socket.on('error', (e:any) =>{
+          observer.error(e)
+        })
+
+        this.socket.on('connect_error', (e:any) => {
+          observer.error(e)
+        })
+
+      }catch(e){
+        observer.error(e);
+      }
+    })
+  }
 }

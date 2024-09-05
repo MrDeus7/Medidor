@@ -10,9 +10,9 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class PanelComponent {
   @Input() meterName: string = '';
-  @Input() energy: number = 20; // Valor dinámico que se pasará al componente
-  @Input() cost: number = 0;
-  @Input() coEmissions: number = 0;
+  @Input() energyGenerated: number = 20; // Valor dinámico que se pasará al componente
+  @Input() saving: number = 0;
+  @Input() reducedCoEmissions: number = 0;
 
   weatherInfo: any = [];
 
@@ -26,7 +26,7 @@ export class PanelComponent {
 
   getStrokeDasharray(): string {
     const circumference = 282.78;
-    const visibleLength = (this.energy / 100) * circumference;
+    const visibleLength = (this.energyGenerated / 100) * circumference;
     return `${visibleLength} ${circumference}`;
   }
 
@@ -42,6 +42,31 @@ export class PanelComponent {
           );
         }
       });
+    });
+  }
+
+  ngOnInit(): void {
+  
+    this.dataService.getPanelData$().subscribe({
+      next: (data) => {
+        console.log('Data received:', data);
+
+        if (data) {
+          this.meterName = data.meterName;
+          this.energyGenerated = data.energyGenerated;
+          this.saving = data.saving;
+          this.reducedCoEmissions = data.reducedCoEmissions;
+          
+        } else {
+          console.warn('Data not found');
+        }
+      },
+      error: (error) => {
+        console.error('Error:', error);
+      },
+      complete: () => {
+        console.log('Complete');
+      },
     });
   }
 }
