@@ -44,14 +44,14 @@ export class HomeComponent {
             this.toastr.warning(
               'La generacion del panel solar no es suficiente para abastecer a todos los dispositivos conectados',
               '¡Advertencia!',
-              { timeOut: 10000, positionClass: 'toast-bottom-right' }
+              { timeOut: 50000, positionClass: 'toast-bottom-right' }
             );
             this.adver = true;
           }else if(data.energyConsumed>12){
             this.toastr.error(
               'El consumo de energia ha superado el promedio por dia',
               '¡Advertencia!',
-              { timeOut: 10000, positionClass: 'toast-bottom-right' }
+              { timeOut: 50000, positionClass: 'toast-bottom-right' }
             );
             this.adver = true;
           }else{
