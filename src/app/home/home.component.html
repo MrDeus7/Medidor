@@ -56,7 +56,7 @@
       </svg>
       <button style="border-color: #e4e4e4; cursor: pointer" id="center-circle">
         <span id="name">KWH</span>
-        <span id="value">{{ energy }}</span>
+        <span id="value">{{ energyConsumed }}</span>
       </button>
 
       <button *ngIf="adver"
@@ -79,7 +79,7 @@
       <div class="titulo">Energia</div>
       <div id="icono">
         <mat-icon class="icon">power</mat-icon>
-        <span id="value-power">{{ energy }} KWH</span>
+        <span id="value-power">{{ energyConsumed }} KWH</span>
       </div>
     </div>
 
@@ -95,7 +95,7 @@
       <div class="titulo">Co2</div>
       <div id="icono">
         <mat-icon class="icon">factory</mat-icon>
-        <span id="value-power">{{ coEmissions }} Kg</span>
+        <span id="value-power">{{ coEmissionsGenerated }} Kg</span>
       </div>
     </div>
   </div>

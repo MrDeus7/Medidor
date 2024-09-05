@@ -9,9 +9,9 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class HomeComponent {
   @Input() meterName: string = '';
-  @Input() energy: number = 20; // Valor dinámico que se pasará al componente
+  @Input() energyConsumed: number = 20; // Valor dinámico que se pasará al componente
   @Input() cost: number = 0;
-  @Input() coEmissions: number = 0;
+  @Input() coEmissionsGenerated: number = 0;
   adver: boolean = false;
   const = 50;
 
@@ -22,7 +22,7 @@ export class HomeComponent {
 
   getStrokeDasharray(): string {
     const circumference = 282.78;
-    const visibleLength = (this.energy / 100) * circumference;
+    const visibleLength = (this.energyConsumed / 100) * circumference;
     return `${visibleLength} ${circumference}`;
   }
 
@@ -36,19 +36,19 @@ export class HomeComponent {
 
         if (data) {
           this.meterName = data.meterName;
-          this.energy = data.energy;
+          this.energyConsumed = data.energyConsumed;
           this.cost = data.cost;
-          this.coEmissions = data.coEmissions;
+          this.coEmissionsGenerated = data.coEmissionsGenerated;
           
           //logica para la comparacion del consumo contra la generacion (alerta de alto consumo)
-          if(data.energy>=10 && data.energy<12){
+          if(data.energyConsumed>=10 && data.energyConsumed<12){
             this.toastr.warning(
               'La generacion del panel solar no es suficiente para abastecer a todos los dispositivos conectados',
               '!Advertencia¡',
               { timeOut: 10000, positionClass: 'toast-bottom-right' }
             );
             this.adver = true;
-          }else if(data.energy>12){
+          }else if(data.energyConsumed>12){
             this.toastr.error(
               'El consumo de energia ha superado el promedio por dia',
               '!Advertencia¡',
