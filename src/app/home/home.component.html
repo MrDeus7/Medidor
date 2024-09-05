@@ -30,22 +30,23 @@
         <span style="--i: 19"></span>
         <span style="--i: 20"></span>
       </div>
-      
-      <div id="minor-tick-bottom-mask"> 
-        <button *ngIf="adver"
-        class="boton"
-        mat-raised-button
-        matTooltipClass="tooltip"
-        matTooltip="Considere las siguientes acciones para disminuir el consumo:
+
+      <div id="minor-tick-bottom-mask">
+        <button
+          *ngIf="adver"
+          class="boton"
+          mat-raised-button
+          matTooltipClass="tooltip"
+          matTooltip="Considere las siguientes acciones para disminuir el consumo:
         1.Desconectar aparatos electronicos que no esten en uso.      
         2.Revisar los dispositivos conectados en busca de mal funcionamiento.
         3.Considerar aumentar la potencia de los paneles solares."
-        matTooltipPosition="right"
-      >
-    <img style="height: 40px; width: 40px" src="assets/warning.png" />
-      </button></div>
+          matTooltipPosition="right"
+        >
+          <img style="height: 40px; width: 40px" src="assets/warning.png" />
+        </button>
+      </div>
       <div id="bottom-circle"></div>
-
       <svg
         version="1.1"
         baseProfile="full"
@@ -67,67 +68,55 @@
           [attr.stroke-dasharray]="getStrokeDasharray()"
         />
       </svg>
-      <div  id="center-circle">
+      
+      <div id="center-circle">
         <span id="name">KWH</span>
-       
-
-      <button *ngIf="adver"
-        class="boton"
-        mat-raised-button
-        matTooltipClass="tooltip"
-        matTooltip="Considere las siguientes acciones para disminuir el consumo:
-        1.Desconectar aparatos electronicos que no esten en uso.      
-        2.Revisar los dispositivos conectados en busca de mal funcionamiento.
-        3.Considerar aumentar la potencia de los paneles solares."
-        matTooltipPosition="right"
-      >
-        <img style="height: 40px; width: 40px" src="assets/warning.png" />
-      </button>
-    </div>
-  </div>
-
-  
-
-  <div class="datos">
-    <div id="Energia-Box">
-      <div class="titulo">Energia</div>
-      <div id="icono">
-        <mat-icon class="icon">power</mat-icon>
-        <span id="value-power">{{ energyConsumed }} KWH</span>
-      </div>
-    </div>
-
-    <div id="Coste-Box">
-      <div class="titulo">Coste</div>
-      <div id="icono">
-        <mat-icon class="icon">payments</mat-icon>
-        <span id="value-power">{{ cost }}$</span>
-      </div>
-    </div>
-
-    <div id="Co2-box">
-      <div class="titulo">Co2</div>
-      <div id="icono">
-        <mat-icon class="icon">factory</mat-icon>
-        <span id="value-power">{{ coEmissionsGenerated }} Kg</span>
+        <span id="value">{{energyConsumed}}</span>
       </div>
     </div>
   </div>
 
-  <h1>Medidores Individuales</h1>
-  <div id="individual">
-    <div>
-      <app-ind1  [adver]="adver"></app-ind1>
+    <div class="datos">
+      <div id="Energia-Box">
+        <div class="titulo">Energia</div>
+        <div id="icono">
+          <mat-icon class="icon">power</mat-icon>
+          <span id="value-power">{{ energyConsumed }} KWH</span>
+        </div>
+      </div>
+
+      <div id="Coste-Box">
+        <div class="titulo">Coste</div>
+        <div id="icono">
+          <mat-icon class="icon">payments</mat-icon>
+          <span id="value-power">{{ cost }}$</span>
+        </div>
+      </div>
+
+      <div id="Co2-box">
+        <div class="titulo">Co2</div>
+        <div id="icono">
+          <mat-icon class="icon">factory</mat-icon>
+          <span id="value-power">{{ coEmissionsGenerated }} Kg</span>
+        </div>
+      </div>
     </div>
-    <div>
-      <app-ind2 [adver]="adver"></app-ind2>
+
+    <h1>Medidores Individuales</h1>
+    <div id="individual">
+      <div>
+        <app-ind1 [adver]="adver"></app-ind1>
+      </div>
+      <div>
+        <app-ind2 [adver]="adver"></app-ind2>
+      </div>
+      <div>
+        <app-ind3 [adver]="adver"></app-ind3>
+      </div>
     </div>
-    <div>
-      <app-ind3 [adver]="adver"></app-ind3>
+
+    <div class="graficos">
+      <app-graficos [titulo]="'Consumo'"></app-graficos>
     </div>
   </div>
 
-  <div class="graficos">
-    <app-graficos [titulo]="'Consumo'"></app-graficos>
-  </div>
-</div>
