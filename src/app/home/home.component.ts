@@ -1,4 +1,4 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { DataServiceService } from '../data-service.service';
 import { ToastrService } from 'ngx-toastr';
 
@@ -9,7 +9,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class HomeComponent {
   @Input() meterName: string = '';
-  @Input() energyConsumed: number = 20; // Valor dinámico que se pasará al componente
+  @Input() energyConsumed: number = 0; // Valor dinámico que se pasará al componente
   @Input() cost: number = 0;
   @Input() coEmissionsGenerated: number = 0;
   adver: boolean = false;
@@ -26,11 +26,10 @@ export class HomeComponent {
     return `${visibleLength} ${circumference}`;
   }
 
-  btcPrices: number[] = [];
 
   ngOnInit(): void {
   
-    this.dataService.getValues$().subscribe({
+    this.dataService.getGeneralValues$().subscribe({
       next: (data) => {
         console.log('Data received:', data);
 

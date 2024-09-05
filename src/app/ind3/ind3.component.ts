@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./ind3.component.css']
 })
 export class Ind3Component {
-  @Input() value: number = 70; // Valor dinámico que se pasará al componente
+  @Input() value: number = 0; // Valor dinámico que se pasará al componente
   @Input() adver:boolean=false;
 
   

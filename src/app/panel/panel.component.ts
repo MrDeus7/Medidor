@@ -44,33 +44,4 @@ export class PanelComponent {
       });
     });
   }
-
-  btcPrices: number[] = [];
-
-
- 
-  ngOnInit(): void {
-    
-    
-    this.dataService.getValues$().subscribe({
-      next: (data) => {
-        console.log('Data received:', data);
-
-        if (data) {
-          this.meterName = data.meterName;
-          this.energy = data.energy;
-          this.cost = data.cost;
-          this.coEmissions = data.coEmissions;
-        } else {
-          console.warn('Data not found');
-        }
-      },
-      error: (error) => {
-        console.error('Error:', error);
-      },
-      complete: () => {
-        console.log('Complete');
-      },
-    });
-  }
 }

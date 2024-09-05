@@ -1,4 +1,4 @@
-<h1>Medidor 1</h1>
+<h1>{{meterName}}</h1>
 <div id="gauge">
     <div id="major-ticks">
       <span>0</span>
@@ -51,8 +51,8 @@
       />
     </svg>
     <button style="border-color: #e4e4e4; cursor: pointer;" id="center-circle">
-      <span id="name">WH</span>
-      <span id="value">{{ value }}</span>
+      <span id="name">KWH</span>
+      <span id="value">{{ energyConsumed }}</span>
       <img src="" alt="" />
     </button>
     <button class="boton" *ngIf="adver">
@@ -67,21 +67,21 @@
       <div class="titulo">Energia</div>
       <div id="icono">
         <mat-icon class="icon">power</mat-icon>
-        <span id="value-power">{{ value }} kWh</span>
+        <span id="value-power">{{ energyConsumed }} KWH</span>
       </div>
     </div>
     <div id="Coste-Box">
       <div class="titulo">Coste</div>
       <div id="icono">
         <mat-icon class="icon">payments</mat-icon>
-        <span id="value-power">$0.0</span>
+        <span id="value-power">${{cost}}</span>
       </div>
     </div>
     <div id="Co2-box">
       <div class="titulo">Co2</div>
       <div id="icono">
         <mat-icon class="icon">factory</mat-icon>
-        <span id="value-power"> 0 Kg</span>
+        <span id="value-power"> {{coEmissionsGenerated}} Kg</span>
       </div>
     </div>
   </div>
