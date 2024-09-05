@@ -1,22 +1,71 @@
-  img{
-    margin-top: 10px;
-    width: 50px;
-    height: 50px;
-    shadow: 0 0 20px 10px rgba(255, 255, 0, 0.5);
-  }
+*{
+  margin: 0;
+  padding: 0;
+}
 
-  .navbar{
-    display: flex;
-    background-color: rgb(0, 0, 0);
-  }
+body{
+  min-height: 100vh;
 
-  h1{
-    font-size: 30px;
-    font-weight: bold;
-    background: linear-gradient(to right, rgb(255, 255, 0), rgb(166, 255, 0), rgb(36, 35, 35));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-        
-  }
+}
+
+nav{
+  background-color:white ;
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+  height: 60px;
+}
+
+nav ul{
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+}
+
+nav li{
+  height: 50px;
+  
+}
+
+nav a{
+  height: 100%;
+  padding: 0 30px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: black;
+  padding-top: 10px;
+  font-size: 18px;
+}
+
+nav a:hover{
+  background-color: #f0f0f0;
+}
+
+nav li:first-child{
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.icon{
+  padding-right: 10px;
+}
+
+img{
+  margin-top: 5px;
+  width: 60px;
+  height: 55px;
+  shadow: 0 0 20px 10px rgba(255, 255, 0, 0.5);
+}
+
+h1{
+  padding-top: 20px;
+  padding-left: 10px;
+  font-size: 24px;
+  background: linear-gradient(to right, rgb(3, 72, 221),rgb(255, 115, 0));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

@@ -1,5 +1,5 @@
 <div class="general">
-  <h1 class="meterName">MEDIDOR DE CONSUMO GENERAL</h1>
+  <h1 class="meterName">MEDIDOR DE CONSUMO ENERGETICO</h1>
   <h2 id="meter">{{ meterName }}</h2>
   <div class="medidor">
     <div id="gauge">
@@ -32,6 +32,7 @@
       </div>
       <div id="minor-tick-bottom-mask"></div>
       <div id="bottom-circle"></div>
+
       <svg
         version="1.1"
         baseProfile="full"
@@ -53,9 +54,22 @@
           [attr.stroke-dasharray]="getStrokeDasharray()"
         />
       </svg>
-      <button style="border-color: green; cursor: pointer;" id="center-circle">
+      <button style="border-color: #e4e4e4; cursor: pointer" id="center-circle">
         <span id="name">KWH</span>
         <span id="value">{{ energy }}</span>
+      </button>
+
+      <button *ngIf="adver"
+        class="boton"
+        mat-raised-button
+        matTooltipClass="tooltip"
+        matTooltip="Considere las siguientes acciones para disminuir el consumo:
+        1.Desconectar aparatos electronicos que no esten en uso.      
+        2.Revisar los dispositivos conectados en busca de mal funcionamiento.
+        3.Considerar aumentar la potencia de los paneles solares."
+        matTooltipPosition="right"
+      >
+        <img style="height: 40px; width: 40px" src="assets/warning.png" />
       </button>
     </div>
   </div>
@@ -81,27 +95,25 @@
       <div class="titulo">Co2</div>
       <div id="icono">
         <mat-icon class="icon">factory</mat-icon>
-        <span id="value-power">{{coEmissions}} lb</span>
+        <span id="value-power">{{ coEmissions }} Kg</span>
       </div>
     </div>
   </div>
 
-
   <h1>Medidores Individuales</h1>
   <div id="individual">
     <div>
-      <app-ind1></app-ind1>
+      <app-ind1  [adver]="adver"></app-ind1>
     </div>
     <div>
-      <app-ind2></app-ind2>
+      <app-ind2 [adver]="adver"></app-ind2>
     </div>
     <div>
-      <app-ind3></app-ind3>
+      <app-ind3 [adver]="adver"></app-ind3>
     </div>
   </div>
 
   <div class="graficos">
-    <app-graficos></app-graficos>
+    <app-graficos [titulo]="'Consumo'"></app-graficos>
   </div>
-  
 </div>

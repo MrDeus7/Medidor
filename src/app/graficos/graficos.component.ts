@@ -1,4 +1,4 @@
-import { Component, AfterViewInit} from '@angular/core';
+import { Component, AfterViewInit, Input} from '@angular/core';
 import * as echarts from 'echarts';
 
 @Component({
@@ -10,6 +10,12 @@ export class GraficosComponent {
   ngAfterViewInit(): void {
     this.initChart();
   }
+
+  @Input () titulo: string="" ;
+
+ 
+
+  
 
   initChart(): void {
 
@@ -29,7 +35,7 @@ export class GraficosComponent {
     const option: echarts.EChartsOption = {
       backgroundColor: '#f0f0f0',
       title: {
-        text: 'Consumo Diario',
+        text: `${this.titulo} Diario`,
         textStyle: {
           color: '#000000'
         }
@@ -101,7 +107,7 @@ export class GraficosComponent {
     const option1: echarts.EChartsOption = {
       backgroundColor: '#f0f0f0',
       title: {
-        text: 'Consumo Semanal',
+        text: `${this.titulo} Semanal`,
         textStyle: {
           color: '#000000'
         }
@@ -172,7 +178,7 @@ export class GraficosComponent {
     const option2: echarts.EChartsOption = {
       backgroundColor: '#f0f0f0',
       title: {
-        text: 'Consumo Mensual',
+        text:  `${this.titulo} Mensual`,
         textStyle: {
           color: '#000000'
         }
@@ -244,7 +250,7 @@ export class GraficosComponent {
     const option3: echarts.EChartsOption = {
       backgroundColor: '#f0f0f0',
       title: {
-        text: 'Consumo Anual',
+        text:  `${this.titulo} Anual`,
         textStyle: {
           color: '#000000'
         }

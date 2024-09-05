@@ -1,8 +1,107 @@
-h1{
-    display: flex  ;
+.general {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center ;
+    justify-content: center;
+    padding-top: 20px;
 }
+
+.medidor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 300px;
+}
+
+#meter{
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 25px;
+    letter-spacing: 0px;
+    word-spacing: 0px;
+    color: #000000;
+    font-weight: bold;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: uppercase;
+}
+
+.datos{
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    height: 100px;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom:60px;
+}
+
+.graficos{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: 400px;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom:20px;
+}
+
+#individual{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+    height: 500px;
+    padding-top: 20px;
+}
+
+#Energia-Box{
+    width: 30%;
+    height: 100%;
+    background-color: #186eb6;
+    border-radius: 3%;
+}
+
+#Coste-Box{
+    width: 30%;
+    height: 100%;
+    background-color: #41b618;
+    border-radius: 3%;
+}
+
+#Co2-box{
+    width: 30%;
+    height: 100%;
+    background-color: #b5bbb2;
+    border-radius: 3%;
+}
+
+ .titulo{
+    width: 100%;
+    padding-top: 2px;
+    color: white;
+    font-size: 20px;
+    border-bottom:  1px solid white;
+ }
+
+.icon{
+    width: 30%;
+    height: 100%;
+    font-size: 70px;
+    color: white;
+}
+
+#value-power{
+    padding-top: 10px;
+    position: absolute;
+    font-size: 2.5em;
+    color: white;
+}
+
+
+
 #gauge {
     position: relative;
     width: 300px;
@@ -104,7 +203,8 @@ svg path{
     display: flex;
     justify-content: center;
     align-items: center ;
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);   
+    
 }
 
 #center-circle::before{
@@ -113,7 +213,7 @@ svg path{
     width: 145px;
     height: 145px;
     background:linear-gradient(0deg, #fff 0%,#e7ecf1 100%);
-    border-radius: 50%;   
+    border-radius: 50%;  
 }
 
 #name{
@@ -130,80 +230,9 @@ svg path{
     color: #afafaf;
 }
 
-.datos{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100px;
-    align-items: center;
-    justify-content: space-between;
-    padding-bottom:50px;
+
+
+#meterName{
     
-}
-
-#individual{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 500px;
-    
-}
-
-#Energia-Box{
-    width: 30%;
-    height: 50%;
-    background-color: #186eb6;
-    border-radius: 3%;
-}
-
-#Coste-Box{
-    width: 30%;
-    height: 50%;
-    background-color: #41b618;
-    border-radius: 3%;
-}
-
-#Co2-box{
-    width: 30%;
-    height: 50%;
-    background-color: #b5bbb2;
-    border-radius: 3%;
-}
-
-.titulo{
-    width: 100%;
-    padding-top: 2px;
-    color: white;
-    font-size: 14px;
-    border-bottom:  1px solid white;
- }
-
-.icon{
-    width: 30%;
-    height: 100%;
-    font-size: 20px;
-    color: white;
-}
-
-#value-power{
-    padding-top: 10px;
-    position: absolute;
-    font-size: 1em;
-    color: white;
-}
-
-.boton {
-    width: 40px;
-    height: 35px;
-    margin-left: 280px;
-    margin-top: 150px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-    border-color: transparent;
+    size: 500px;
 }

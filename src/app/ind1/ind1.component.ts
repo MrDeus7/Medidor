@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class Ind1Component {
   @Input() value: number = 30; // Valor dinámico que se pasará al componente
-
+  @Input() adver:boolean=false;
 
   getStrokeDasharray(): string {
     const circumference = 282.78; 

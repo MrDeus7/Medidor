@@ -50,10 +50,14 @@
         [attr.stroke-dasharray]="getStrokeDasharray()"
       />
     </svg>
-    <button style="border-color: green; cursor: pointer;" id="center-circle">
+    <button style="border-color: #e4e4e4; cursor: pointer;" id="center-circle">
       <span id="name">WH</span>
       <span id="value">{{ value }}</span>
       <img src="" alt="" />
+    </button>
+    
+    <button class="boton" *ngIf="adver">
+      <img style="height: 40px; width: 40px" src="assets/warning.png" />
     </button>
   </div>
   <div class="datos">
@@ -75,7 +79,7 @@
       <div class="titulo">Co2</div>
       <div id="icono">
         <mat-icon class="icon">factory</mat-icon>
-        <span id="value-power">0,00 lb</span>
+        <span id="value-power">0 Kg</span>
       </div>
     </div>
   </div>

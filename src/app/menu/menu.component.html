@@ -1,6 +1,12 @@
-<nav class="navbar navbar-dark bg-dark" class="navbar">
-  <a class="navbar-brand">
-    <img src="assets/green-energy.png" width="30" height="30" class="d-inline-block align-top" alt="">
-  </a>
-  <h1>CONSUMO ENERGÉTICO</h1>
+<nav>
+  <ul>
+    
+    <li>
+      <img src="assets/logo.png">
+      <h1>SEyA - Soluciones Electricas y Ambientales</h1>
+    </li>
+    <li><a [routerLink]="['/']"> <mat-icon class="icon">home</mat-icon>Inicio</a></li>
+    <li> <a [routerLink]="['/consumo']"> <mat-icon class="icon">bolt</mat-icon>Consumo Electrico</a></li>
+    <li><a [routerLink]="['/panel']"> <mat-icon class="icon">solar_power</mat-icon>Panel Solar</a></li>
+  </ul>
 </nav>
