@@ -3,6 +3,7 @@ h1{
     align-items: center;
     justify-content: center ;
 }
+
 #gauge {
     position: relative;
     width: 300px;

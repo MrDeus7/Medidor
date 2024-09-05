@@ -39,19 +39,19 @@ export class HomeComponent {
           this.energy = data.energy;
           this.cost = data.cost;
           this.coEmissions = data.coEmissions;
-          
+
           //logica para la comparacion del consumo contra la generacion (alerta de alto consumo)
           if(data.energy>=10 && data.energy<12){
             this.toastr.warning(
               'La generacion del panel solar no es suficiente para abastecer a todos los dispositivos conectados',
-              '!Advertencia¡',
+              '¡Advertencia!',
               { timeOut: 10000, positionClass: 'toast-bottom-right' }
             );
             this.adver = true;
           }else if(data.energy>12){
             this.toastr.error(
               'El consumo de energia ha superado el promedio por dia',
-              '!Advertencia¡',
+              '¡Advertencia!',
               { timeOut: 10000, positionClass: 'toast-bottom-right' }
             );
             this.adver = true;

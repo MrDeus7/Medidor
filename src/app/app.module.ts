@@ -19,6 +19,7 @@ import { PanelComponent } from './panel/panel.component';
 import { InfoComponent } from './info/info.component';
 import { ToastrModule } from 'ngx-toastr';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { HttpClientModule } from '@angular/common/http';
 
 
 const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
@@ -39,7 +40,8 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
     ]),
     MatIconModule,
     SocketIoModule.forRoot(config),
-    ToastrModule.forRoot(),MatTooltipModule
+    ToastrModule.forRoot({positionClass: 'toast-bottom-right',
+      preventDuplicates: true}),MatTooltipModule,HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

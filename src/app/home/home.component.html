@@ -30,7 +30,20 @@
         <span style="--i: 19"></span>
         <span style="--i: 20"></span>
       </div>
-      <div id="minor-tick-bottom-mask"></div>
+      
+      <div id="minor-tick-bottom-mask"> 
+        <button *ngIf="adver"
+        class="boton"
+        mat-raised-button
+        matTooltipClass="tooltip"
+        matTooltip="Considere las siguientes acciones para disminuir el consumo:
+        1.Desconectar aparatos electronicos que no esten en uso.      
+        2.Revisar los dispositivos conectados en busca de mal funcionamiento.
+        3.Considerar aumentar la potencia de los paneles solares."
+        matTooltipPosition="right"
+      >
+    <img style="height: 40px; width: 40px" src="assets/warning.png" />
+      </button></div>
       <div id="bottom-circle"></div>
 
       <svg
@@ -54,25 +67,15 @@
           [attr.stroke-dasharray]="getStrokeDasharray()"
         />
       </svg>
-      <button style="border-color: #e4e4e4; cursor: pointer" id="center-circle">
+      <div  id="center-circle">
         <span id="name">KWH</span>
         <span id="value">{{ energy }}</span>
-      </button>
-
-      <button *ngIf="adver"
-        class="boton"
-        mat-raised-button
-        matTooltipClass="tooltip"
-        matTooltip="Considere las siguientes acciones para disminuir el consumo:
-        1.Desconectar aparatos electronicos que no esten en uso.      
-        2.Revisar los dispositivos conectados en busca de mal funcionamiento.
-        3.Considerar aumentar la potencia de los paneles solares."
-        matTooltipPosition="right"
-      >
-        <img style="height: 40px; width: 40px" src="assets/warning.png" />
-      </button>
+      </div>
+     
     </div>
   </div>
+
+  
 
   <div class="datos">
     <div id="Energia-Box">
